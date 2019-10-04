@@ -1,8 +1,8 @@
-#Notion 
+# Notion 
 
-####'Your Daily Music Discovery and Journaling Platform' 
+#### 'Your Daily Music Discovery and Journaling Platform' 
 
-#####User Stories
+##### User Stories
 ___
 1. AAU I want to have my own private login 
 2. AAU I want the ability to write in a journal that I can submit and save 
@@ -12,7 +12,7 @@ ___
 6. AAU I want to be able to edit and delete previous journal entries 
 
 
-#####Ice-Box features 
+##### Ice-Box features 
 ___
 1. AAU I want the ability to turn on a mode that generates words for me based on the key of the song 
 2. AAU I want to be able to drag and drop these words onto my journal 
