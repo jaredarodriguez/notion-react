@@ -1,4 +1,5 @@
 #Notion 
+
 ####'Your Daily Music Discovery and Journaling Platform' 
 
 #####User Stories
