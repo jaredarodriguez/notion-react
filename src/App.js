@@ -6,20 +6,19 @@ class App extends Component {
     apiResponse: ""
   }
 
-  callAPI() {
+
+  /* ---- Lifecycle Methods ----*/
+  componentDidMount() {
     fetch('http://localhost:3001/api/notions')
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }))
       .catch(err => err);
   }
 
-  componentDidMount() {
-    this.callAPI();
-  }
-
   render() {
     return (
       <div className="App">
+        <h1>Notion</h1>
         <p>{this.state.apiResponse}</p>
       </div>
     )
