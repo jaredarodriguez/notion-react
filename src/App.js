@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Testing</h1>
-    </div>
-  );
+class App extends Component() {
+  state = {
+    isShowing: true,
+    posts: []
+  }
+
+  handleShowForm = event => {
+    this.setState({
+      isShowing: !this.state.isShowing
+    })
+  }
+
 }
 
 export default App;

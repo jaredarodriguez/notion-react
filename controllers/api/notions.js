@@ -4,8 +4,8 @@ module.exports = {
     index,
     show,
     create,
-    delete: deleteOne,
-    update
+    // delete: deleteOne,
+    // update
 }
 
 async function index(req, res) {
@@ -24,14 +24,14 @@ async function create(req, res) {
 
 }
 
-async function deleteOne(req, res) {
-    const deleteNotion = await Notion.findByIdAndRemove(req.params.id);
-    res.status(201).json(deleteNotion);
+// async function deleteOne(req, res) {
+//     const deleteNotion = await Notion.findByIdAndRemove(req.params.id);
+//     res.status(201).json(deleteNotion);
 
-}
+// }
 
-async function update(req, res) {
-    const updatedNotion = await Notion.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.status(200).json(updatedNotion);
+// async function update(req, res) {
+//     const updatedNotion = await Notion.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//     res.status(200).json(updatedNotion);
 
-}
+// }
