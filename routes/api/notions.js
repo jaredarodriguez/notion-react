@@ -4,7 +4,7 @@ var notionsCtrl = require('../../controllers/api/notions');
 
 router.get('/', notionsCtrl.index);
 router.get('/:id', notionsCtrl.show);
-router.get('/', notionsCtrl.create);
+router.post('/', notionsCtrl.create);
 // router.delete('/:id', notionsCtrl.delete);
 // router.put('/:id', notionsCtrl.update)
 
