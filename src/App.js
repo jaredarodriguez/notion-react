@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component() {
-  state = {
-    isShowing: true,
-    posts: []
-  }
+class App extends Component {
 
-  handleShowForm = event => {
-    this.setState({
-      isShowing: !this.state.isShowing
-    })
+
+  render() {
+    return (
+      <h1>notion</h1>
+    )
   }
 
 }
