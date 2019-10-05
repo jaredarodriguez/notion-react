@@ -3,6 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const notionRouter = require('./routes/api/notions')
+const cors = require('cors');
 
 require('dotenv').config();
 require('./config/database');
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(cors())
 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));

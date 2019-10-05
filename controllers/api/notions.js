@@ -9,8 +9,8 @@ module.exports = {
 }
 
 async function index(req, res) {
-    const notions = await Notion.find({});
-    res.status(200).json(notions);
+    const notion = await Notion.find({});
+    res.status(200).json(notion);
 }
 
 async function show(req, res) {
