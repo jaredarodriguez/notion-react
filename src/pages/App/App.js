@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
-import SignupPage from '../src/pages/SignupPage/SignupPage'
-import userService from './utils/userService';
+import HomePage from '../HomePage/HomePage';
+import SignupPage from '../SignupPage/SignupPage'
+import userService from '../../utils/userService';
 // import LoginPage from './pages/LoginPage/LoginPage';
 
 class App extends Component {
@@ -41,8 +42,8 @@ class App extends Component {
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />}
-
           />
+          <Link to={'/signup'}>Signup</Link>
 
 
 

@@ -1,10 +1,11 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 const NavBar = (props) => {
     let nav = props.user ?
         <div>
-            <Link to='/entries' className='NavBar-link'>E N T R I E S</Link>
+            <Link to='/notions' className='NavBar-link'>N O T I O N S</Link>
 
             <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
