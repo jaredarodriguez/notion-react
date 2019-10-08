@@ -29,9 +29,9 @@ class NotionForm extends Component {
                     "content-type": "application/json"
                 }
             })
-        console.log(this.props.user);
         const fetchJSON = await initialFetch.json()
-        return await fetchJSON
+        alert('thank you for your post')
+        this.setState({ title: '', notion: '', goals: '', songName: '' })
     }
 
     render() {
@@ -76,7 +76,6 @@ class NotionForm extends Component {
                     onChange={this.handleChange}
                     value={this.state.songName}
                 />
-                {/* <button className='button-primary' onClick={this.props.handleToggle}>close</button> */}
                 <input type="submit" />
             </form>
         )
