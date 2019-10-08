@@ -6,10 +6,11 @@ import SignupPage from '../SignupPage/SignupPage'
 import userService from '../../utils/userService';
 import LoginPage from '../LoginPage/LoginPage';
 import NotionForm from '../../components/Notion/NotionForm';
+import NotionsPage from '../NotionsPage/NotionsPage';
 
 class App extends Component {
   state = {
-    apiResponse: "",
+    apiResponse: null,
     user: null
   }
 
@@ -29,7 +30,7 @@ class App extends Component {
   /* ---- Lifecycle Methods ----*/
   componentDidMount() {
     fetch('http://localhost:3001/api/notions')
-      .then(res => res.text())
+      .then(res => res.json())
       .then(res => this.setState({ apiResponse: res }))
       .catch(err => err);
   }
@@ -58,6 +59,9 @@ class App extends Component {
           <Route exact path='/' render={() =>
             <HomePage user={this.state.user} handleLogout={this.handleLogout}
             />
+          } />
+          <Route exact path='/notions' render={() =>
+            <NotionsPage user={this.state.user} handleLogout={this.handleLogout} notionData={this.state.apiResponse} />
           } />
         </Switch>
 

@@ -4,7 +4,14 @@ import './NotionForm'
 class Notion extends Component {
     render() {
         return (
-            <h1>{this.props.title}</h1>
+            <div className="notionCard">
+                <h1>{this.props.title}</h1>
+                <p>{this.props.notion}</p>
+                <p>{this.props.goals}</p>
+                <p>{this.props.songName}</p>
+                <p>{this.props.moodRating}</p>
+            </div>
+
         )
     }
 }
