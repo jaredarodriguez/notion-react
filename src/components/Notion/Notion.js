@@ -3,10 +3,11 @@ import './NotionForm'
 
 class Notion extends Component {
 
-    handleClick = () => {
-        fetch(`http://localhost:3001/api/notions/${this.props.id}`, {
+    handleClick = async () => {
+        await fetch(`http://localhost:3001/api/notions/${this.props.id}`, {
             method: 'DELETE'
         })
+        this.props.update()
     }
 
     render() {
