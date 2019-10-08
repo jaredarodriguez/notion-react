@@ -5,11 +5,12 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage'
 import userService from '../../utils/userService';
 import LoginPage from '../LoginPage/LoginPage';
+import NotionForm from '../../components/Notion/NotionForm';
 
 class App extends Component {
   state = {
     apiResponse: "",
-    users: null
+    user: null
   }
 
   handleSignupOrLogin = () => {
@@ -36,6 +37,12 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div className="App">
+          <header className='header-footer'>N O T I O N </header>
+          <Link className="SignupLink" to={'/signup'}>Signup</Link>
+          <div className="LoginLink"><Link to={'/login'}>Login</Link></div>
+          <p>{this.state.apiResponse}</p>
+        </div>
         <Switch>
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage
@@ -44,23 +51,16 @@ class App extends Component {
             />}
           />
 
+
           <Route exact path='/login' render={({ history }) =>
             <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />}
           />
-
-
-
-
         </Switch>
-        <Link className="Signup" to={'/signup'}>Signup</Link>
-        <div className="LoginPage"><Link to={'/login'}>Login</Link></div>
-        <div className="App">
-          <header className='header-footer'>N O T I O N </header>
-          <p>{this.state.apiResponse}</p>
-        </div>
+        <NotionForm />
+
       </div>
     )
   };

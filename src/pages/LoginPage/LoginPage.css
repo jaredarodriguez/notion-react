@@ -1,5 +1,9 @@
-.LoginPage {
+.LoginLink {
     display: flex; 
     float: right; 
-    color: orange; 
+    color:black; 
 }
+/* TODO STYLE LOGIN PAGE */
+/* .LoginPage {
+    
+} */
