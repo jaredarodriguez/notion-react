@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 
-export default class Notion extends Component {
+class Notion extends Component {
     state = {
         notion: '',
         goals: '',
@@ -12,12 +12,13 @@ export default class Notion extends Component {
 
     handleChange = event => {
         this.setState({
-            [event.currentTarget.name]: event.currentTarget.value
+            [event.target.name]: event.target.value
         })
     }
 }
 
-handleSubmit = async event => {
+handleSubmit = event => {
     event.preventDefault()
-    await this.PaymentResponse.handle
+
 }
+export default Notion

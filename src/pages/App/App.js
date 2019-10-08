@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-import HomePage from '../HomePage/HomePage';
+// import HomePage from '../HomePage/HomePage';
 import SignupPage from '../SignupPage/SignupPage'
 import userService from '../../utils/userService';
-// import LoginPage from './pages/LoginPage/LoginPage';
+import LoginPage from '../LoginPage/LoginPage';
 
 class App extends Component {
   state = {
@@ -43,12 +43,20 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />}
           />
-          <Link to={'/signup'}>Signup</Link>
+
+          <Route exact path='/login' render={({ history }) =>
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />}
+          />
+
 
 
 
         </Switch>
-
+        <Link className="Signup" to={'/signup'}>Signup</Link>
+        <div className="LoginPage"><Link to={'/login'}>Login</Link></div>
         <div className="App">
           <header className='header-footer'>N O T I O N </header>
           <p>{this.state.apiResponse}</p>

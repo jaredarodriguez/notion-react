@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var notionSchema = new Schema({
+const notionSchema = new Schema({
     notion: String,
     goals: String,
     songName: String,
