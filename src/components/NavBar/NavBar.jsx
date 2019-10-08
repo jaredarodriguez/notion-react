@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../pages/App/App.css'
 import './NavBar.css';
-
+//here's what props are expected *handleLogout *user 
 const NavBar = (props) => {
     let nav = props.user ?
         <div>
-            <Link to='/notions' className='NavBar-link'>N O T I O N S</Link>
 
-            <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
+
+            <Link to='/' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
         </div>
@@ -19,9 +20,12 @@ const NavBar = (props) => {
         </div>;
 
     return (
-        <div className='NavBar'>
-            {nav}
-        </div>
+        <>
+            <header className='header-footer'>N O T I O N </header>
+            <div className='NavBar'>
+                {nav}
+            </div>
+        </>
     );
 };
 

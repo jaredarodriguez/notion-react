@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-// import HomePage from '../HomePage/HomePage';
+import HomePage from '../HomePage/HomePage'
 import SignupPage from '../SignupPage/SignupPage'
 import userService from '../../utils/userService';
 import LoginPage from '../LoginPage/LoginPage';
@@ -15,7 +15,7 @@ class App extends Component {
 
   handleSignupOrLogin = () => {
     this.setState({
-      user: userService.getUser
+      user: userService.getUser()
     })
   }
   handleLogout = () => {
@@ -38,10 +38,7 @@ class App extends Component {
     return (
       <div>
         <div className="App">
-          <header className='header-footer'>N O T I O N </header>
-          <Link className="SignupLink" to={'/signup'}>Signup</Link>
-          <div className="LoginLink"><Link to={'/login'}>Login</Link></div>
-          <p>{this.state.apiResponse}</p>
+
         </div>
         <Switch>
           <Route exact path='/signup' render={({ history }) =>
@@ -58,8 +55,11 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />}
           />
+          <Route exact path='/' render={() =>
+            <HomePage user={this.state.user} handleLogout={this.handleLogout}
+            />
+          } />
         </Switch>
-        <NotionForm />
 
       </div>
     )
