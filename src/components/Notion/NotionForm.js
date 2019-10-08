@@ -22,10 +22,14 @@ class NotionForm extends Component {
         event.preventDefault()
         const initialFetch = await fetch('http://localhost:3001/api/notions',
             {
-                method: 'post', body: JSON.stringify({ title, notion, goals, songName, moodRating }), headers: {
+                method: 'post', body: JSON.stringify({
+                    title, notion, goals, songName, moodRating,
+                    email: this.props.user.email
+                }), headers: {
                     "content-type": "application/json"
                 }
             })
+        console.log(this.props.user);
         const fetchJSON = await initialFetch.json()
         return await fetchJSON
     }

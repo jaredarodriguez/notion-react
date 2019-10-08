@@ -5,7 +5,7 @@ import NotionForm from '../../components/Notion/NotionForm'
 const HomePage = (props) => {
     let homepage = props.user ?
         <div>
-            <NotionForm />
+            <NotionForm user={props.user} />
         </div>
         :
         <></>

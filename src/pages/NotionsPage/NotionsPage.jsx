@@ -15,6 +15,7 @@ const NotionsPage = (props) => {
             </div>
         })
     }
+
     return (
         <>
             <NavBar user={props.user} handleLogout={props.handleLogout} />

@@ -18,6 +18,12 @@ class App extends Component {
     this.setState({
       user: userService.getUser()
     })
+    if (this.state.user) {
+      fetch(`http://localhost:3001/api/notions/user/${this.state.user.email}`)
+        .then(res => res.json())
+        .then(res => this.setState({ apiResponse: res }))
+        .catch(err => err);
+    }
   }
   handleLogout = () => {
     userService.logout()
@@ -28,12 +34,9 @@ class App extends Component {
 
 
   /* ---- Lifecycle Methods ----*/
-  componentDidMount() {
-    fetch('http://localhost:3001/api/notions')
-      .then(res => res.json())
-      .then(res => this.setState({ apiResponse: res }))
-      .catch(err => err);
-  }
+  // componentDidMount = () => {
+
+  // }
 
   render() {
     return (
