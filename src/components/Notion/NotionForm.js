@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 class NotionForm extends Component {
     state = {
+        title: '',
         notion: '',
         goals: '',
         songName: '',
@@ -16,15 +17,34 @@ class NotionForm extends Component {
         })
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
+        const { title, notion, goals, songName, moodRating } = this.state
         event.preventDefault()
+        const initialFetch = await fetch('http://localhost:3001/api/notions',
+            {
+                method: 'post', body: JSON.stringify({ title, notion, goals, songName, moodRating }), headers: {
+                    "content-type": "application/json"
+                }
+            })
+        const fetchJSON = await initialFetch.json()
+        return await fetchJSON
     }
 
     render() {
         return (
             <form className="blog-form" onSubmit={this.handleSubmit}>
-                <p>{this.state.notion}</p>
                 <div>
+                    <div>
+                        {' '}
+                        <label>Title</label>
+                        <input
+                            type="text"
+                            name="title"
+                            onChange={this.handleChange}
+                            value={this.state.title}
+                        />
+                    </div>
+                    <p>{this.state.notion}</p>
                     <div>
                         {' '}
                         <label>Notion</label>
@@ -52,7 +72,7 @@ class NotionForm extends Component {
                     onChange={this.handleChange}
                     value={this.state.songName}
                 />
-                <button className='button-primary' onClick={this.props.handleToggle}>close</button>
+                {/* <button className='button-primary' onClick={this.props.handleToggle}>close</button> */}
                 <input type="submit" />
             </form>
         )

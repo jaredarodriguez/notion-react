@@ -20,6 +20,7 @@ async function show(req, res) {
 
 async function create(req, res) {
     const notion = await Notion.create(req.body);
+    console.log(req.body)
     res.status(201).json(notion);
 
 }

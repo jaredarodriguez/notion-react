@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 const notionSchema = new Schema({
+    title: String,
     notion: String,
     goals: String,
     songName: String,
