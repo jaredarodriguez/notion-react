@@ -11,7 +11,7 @@ const NotionsPage = (props) => {
             return <div>
                 <Notion title={d.title} notion={d.notion}
                     goals={d.goals} songName={d.songName}
-                    moodRating={d.moodRating} />
+                    moodRating={d.moodRating} id={d._id} />
             </div>
         })
     }

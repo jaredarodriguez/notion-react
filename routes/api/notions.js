@@ -6,7 +6,7 @@ router.get('/user/:name', notionsCtrl.displayAllByUser);
 router.get('/', notionsCtrl.index);
 router.get('/:id', notionsCtrl.show);
 router.post('/', notionsCtrl.create);
-// router.delete('/:id', notionsCtrl.delete);
+router.delete('/:id', notionsCtrl.delete);
 // router.put('/:id', notionsCtrl.update)
 
 module.exports = router; 

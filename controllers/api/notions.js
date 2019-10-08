@@ -5,7 +5,7 @@ module.exports = {
     show,
     create,
     displayAllByUser,
-    // delete: deleteOne,
+    delete: deleteOne,
     // update
 }
 
@@ -30,11 +30,11 @@ async function displayAllByUser(req, res) {
     const notion = await Notion.find({ email: req.params.name })
     res.status(200).json(notion)
 }
-// async function deleteOne(req, res) {
-//     const deleteNotion = await Notion.findByIdAndRemove(req.params.id);
-//     res.status(201).json(deleteNotion);
+async function deleteOne(req, res) {
+    const deleteNotion = await Notion.findByIdAndRemove(req.params.id);
+    res.status(201).json(deleteNotion);
 
-// }
+}
 
 // async function update(req, res) {
 //     const updatedNotion = await Notion.findByIdAndUpdate(req.params.id, req.body, { new: true });

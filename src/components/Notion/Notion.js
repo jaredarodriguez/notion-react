@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import './NotionForm'
 
 class Notion extends Component {
+
+    handleClick = () => {
+        fetch(`http://localhost:3001/api/notions/${this.props.id}`, {
+            method: 'DELETE'
+        })
+    }
+
     render() {
         return (
             <div className="notionCard">
@@ -10,6 +17,7 @@ class Notion extends Component {
                 <p>{this.props.goals}</p>
                 <p>{this.props.songName}</p>
                 <p>{this.props.moodRating}</p>
+                <button onClick={this.handleClick}>X</button>
             </div>
 
         )
