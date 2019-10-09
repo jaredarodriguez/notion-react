@@ -61,8 +61,8 @@ class App extends Component {
           <Route exact path='/notions' render={() =>
             <NotionsPage user={this.state.user} handleLogout={this.handleLogout} notionData={this.state.apiResponse} />
           } />
-          {/* <Route exact path '/edit' render={() => */}
-          <EditPage user={this.state.user} handleLogout={this.handleLogout} />} />
+          <Route exact path='/edit' render={({ location }) =>
+            <EditPage location={location} user={this.state.user} handleLogout={this.handleLogout} />} />
         </Switch>
 
       </div>

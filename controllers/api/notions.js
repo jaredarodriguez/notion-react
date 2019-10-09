@@ -6,7 +6,7 @@ module.exports = {
     create,
     displayAllByUser,
     delete: deleteOne,
-    // update
+    update
 }
 
 async function index(req, res) {
@@ -36,8 +36,8 @@ async function deleteOne(req, res) {
 
 }
 
-// async function update(req, res) {
-//     const updatedNotion = await Notion.findByIdAndUpdate(req.params.id, req.body, { new: true });
-//     res.status(200).json(updatedNotion);
+async function update(req, res) {
+    const updatedNotion = await Notion.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.status(200).json(updatedNotion);
 
-// }
+}

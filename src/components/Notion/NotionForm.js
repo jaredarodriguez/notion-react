@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { create } from '../../services/notion-api';
+import { create, update } from '../../services/notion-api';
 
 
 class NotionForm extends Component {
     state = {
-        title: '',
-        notion: '',
-        goals: '',
-        songName: '',
-        moodRating: 10,
+        title: this.props.editTitle || '',
+        notion: this.props.editNotion || '',
+        goals: this.props.editGoals || '',
+        songName: this.props.editSongName || '',
+        moodRating: this.props.editMoodRating || 10,
     }
 
     handleChange = event => {
@@ -22,10 +22,13 @@ class NotionForm extends Component {
         const { title, notion, goals, songName, moodRating } = this.state
         const email = this.props.user.email
         event.preventDefault()
-        const initialFetch = await create(title, notion, goals, songName, moodRating, email)
-        console.log(initialFetch);
-        const fetchJSON = await initialFetch.json()
-        alert('thank you for your post')
+        if (this.props.id)
+            await update(title, notion, goals, songName, moodRating, email, this.props.id)
+        else {
+            const initialFetch = await create(title, notion, goals, songName, moodRating, email)
+            const fetchJSON = await initialFetch.json()
+            alert('thank you for your post')
+        }
         this.setState({ title: '', notion: '', goals: '', songName: '' })
     }
 
