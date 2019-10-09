@@ -1,6 +1,6 @@
 # Notion 
 
-#### 'Your Daily Music Discovery and Journaling Platform' 
+#### 'Your Daily Music Discovery and Journal Platform' 
 
 ##### User Stories
 ___
