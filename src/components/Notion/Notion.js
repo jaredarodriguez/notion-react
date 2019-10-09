@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import './NotionForm'
+import { deleteOne } from '../../services/notion-api'
 
 class Notion extends Component {
 
     handleClick = async () => {
-        await fetch(`http://localhost:3001/api/notions/${this.props.id}`, {
-            method: 'DELETE'
-        })
+        await deleteOne(this.props.id)
         this.props.update()
     }
 

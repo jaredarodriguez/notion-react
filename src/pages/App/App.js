@@ -7,6 +7,7 @@ import userService from '../../utils/userService';
 import LoginPage from '../LoginPage/LoginPage';
 import NotionForm from '../../components/Notion/NotionForm';
 import NotionsPage from '../NotionsPage/NotionsPage';
+import EditPage from '../EditPage/EditPage';
 
 class App extends Component {
   state = {
@@ -60,6 +61,8 @@ class App extends Component {
           <Route exact path='/notions' render={() =>
             <NotionsPage user={this.state.user} handleLogout={this.handleLogout} notionData={this.state.apiResponse} />
           } />
+          {/* <Route exact path '/edit' render={() => */}
+          <EditPage user={this.state.user} handleLogout={this.handleLogout} />} />
         </Switch>
 
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import Notion from '../../components/Notion/Notion';
+import { notionsPerUser } from '../../services/notion-api';
 
 class NotionsPage extends Component {
     state = {
@@ -9,21 +10,13 @@ class NotionsPage extends Component {
     }
 
     componentDidMount() {
-        if (this.props.user) {
-            this.setState()
-            fetch(`http://localhost:3001/api/notions/user/${this.props.user.email}`)
-                .then(res => res.json())
-                .then(res => this.setState({ apiResponse: res }))
-                .catch(err => err);
-        }
+        this.componentUpdate()
     }
 
-    componentUpdate = () => {
+    componentUpdate = async () => {
         if (this.props.user) {
-            fetch(`http://localhost:3001/api/notions/user/${this.props.user.email}`)
-                .then(res => res.json())
-                .then(res => this.setState({ apiResponse: res }))
-                .catch(err => err);
+            const result = await notionsPerUser(this.props.user.email);
+            this.setState({ apiResponse: result })
         }
     }
     render() {

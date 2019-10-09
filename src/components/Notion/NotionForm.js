@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { create } from '../../services/notion-api';
 
 
 class NotionForm extends Component {
@@ -19,16 +20,10 @@ class NotionForm extends Component {
 
     handleSubmit = async event => {
         const { title, notion, goals, songName, moodRating } = this.state
+        const email = this.props.user.email
         event.preventDefault()
-        const initialFetch = await fetch('http://localhost:3001/api/notions',
-            {
-                method: 'post', body: JSON.stringify({
-                    title, notion, goals, songName, moodRating,
-                    email: this.props.user.email
-                }), headers: {
-                    "content-type": "application/json"
-                }
-            })
+        const initialFetch = await create(title, notion, goals, songName, moodRating, email)
+        console.log(initialFetch);
         const fetchJSON = await initialFetch.json()
         alert('thank you for your post')
         this.setState({ title: '', notion: '', goals: '', songName: '' })
