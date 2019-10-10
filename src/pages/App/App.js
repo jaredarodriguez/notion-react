@@ -5,7 +5,7 @@ import HomePage from '../HomePage/HomePage'
 import SignupPage from '../SignupPage/SignupPage'
 import userService from '../../utils/userService';
 import LoginPage from '../LoginPage/LoginPage';
-import NotionForm from '../../components/Notion/NotionForm';
+// import NotionForm from '../../components/Notion/NotionForm';
 import NotionsPage from '../NotionsPage/NotionsPage';
 import EditPage from '../EditPage/EditPage';
 
