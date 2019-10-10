@@ -8,7 +8,7 @@ export async function deleteOne(id) {
 }
 
 export async function create(title, notion, goals, songName, moodRating, email) {
-    const result = await fetch(`${BASE_URL}`,
+    const result = await fetch('/api/notions',
         {
             method: 'POST', body: JSON.stringify({
                 title, notion, goals, songName, moodRating, email
@@ -21,7 +21,7 @@ export async function create(title, notion, goals, songName, moodRating, email) 
 }
 
 export async function notionsPerUser(user) {
-    const res = await fetch(`${BASE_URL}/${user}`)
+    const res = await fetch(`/api/notions/user/${user}`)
     const data = await res.json()
     return data
 
@@ -33,5 +33,6 @@ export async function update(title, notion, goals, songName, moodRating, email, 
             title, notion, goals, songName, moodRating, email
         }), headers: { "content-type": "application/json" }
     })
+
     return result
 }
