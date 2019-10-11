@@ -24,10 +24,10 @@ class Notion extends Component {
                     <div class="card blue-grey darken-1">
                         <div class="card-content grey-text">
                             <span class="card title">{title}</span>
-                            <h4>{notion}</h4>
-                            <p>{goals}</p>
-                            <p>{songName}</p>
-                            <p>{moodRating}</p>
+                            <h4>NOTION: {notion}</h4>
+                            <p>GOALS: {goals}</p>
+                            <p>SONG NAME{songName}</p>
+                            <p>MOOD RATING:{moodRating}</p>
                             <button onClick={this.handleClick}>X</button>
                             <Link to={{
                                 pathname: '/edit',
