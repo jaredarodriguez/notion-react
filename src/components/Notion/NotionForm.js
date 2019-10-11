@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom'
 import { create, update } from '../../services/notion-api';
+import './Notion.css'
 
 
 class NotionForm extends Component {
@@ -40,6 +41,7 @@ class NotionForm extends Component {
                         {' '}
                         <label>Title</label>
                         <input
+                            className="text-box"
                             type="text"
                             name="title"
                             onChange={this.handleChange}
@@ -51,6 +53,7 @@ class NotionForm extends Component {
                         {' '}
                         <label>Notion</label>
                         <textarea
+                            className="text-box"
                             type="text"
                             name="notion"
                             onChange={this.handleChange}
@@ -60,6 +63,7 @@ class NotionForm extends Component {
                     <div>
                         <label>Goals</label>
                         <input
+                            className="text-box"
                             type="text"
                             name="goals"
                             onChange={this.handleChange}
@@ -69,6 +73,7 @@ class NotionForm extends Component {
                 </div>
                 <label>Song Name</label>
                 <input
+                    className="text-box"
                     type="text"
                     name="songName"
                     onChange={this.handleChange}

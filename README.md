@@ -11,7 +11,7 @@ ___
 1. AAU I want to have my own private login 
 2. AAU I want the ability to write in a journal that I can submit and save 
 3. AAU I want to be able to tag a date to my journal 
-4. AAU I want to have a song randomly generated and played while writing in my journla 
+4. AAU I want to have a song randomly generated and played while writing in my journal
 5. AAU I want to be able to view previous journal entries
 6. AAU I want to be able to edit and delete previous journal entries 
 
