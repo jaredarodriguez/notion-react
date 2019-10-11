@@ -15,6 +15,4 @@ class EditPage extends Component {
         )
     }
 }
-
-
 export default EditPage;

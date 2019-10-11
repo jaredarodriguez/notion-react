@@ -6,15 +6,14 @@ import './NavBar.css';
 const NavBar = (props) => {
     let nav = props.user ?
         <div>
-
-            <Link to='/notions'>YOUR NOTIONS</Link>
+            <Link className='notions-nav' to='/notions'>YOUR NOTIONS</Link>
             <Link to='/' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>COME AS YOUR ARE, {props.user.name}</span>
         </div>
         :
         <div>
-            <Link to='/login' className='NavBar-link'>LOG IN</Link>
+            <Link className='login-nav' to='/login' className='NavBar-link'>LOG IN</Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
         </div>;

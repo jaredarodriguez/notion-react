@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon, Input } from 'semantic-ui-react'
 import userService from '../../utils/userService';
 import './LoginPage.css';
 
@@ -38,12 +39,15 @@ class LoginPage extends Component {
                 <form className="form-horizontal" onSubmit={this.handleSubmit} >
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+                            <Input iconPosition='left' placeholder='Email'>
+                                <input type="email" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+                                <Icon name='at' />
+                            </Input>
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="col-sm-12">
-                            <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+                            <Input icon='users' iconPosition='left' placeholder='Password' value={this.state.pw} name="pw" onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className="form-group">

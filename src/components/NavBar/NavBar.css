@@ -1,7 +1,12 @@
-.NavBar {
-    display: flex;
-    justify-content: center;
-    margin: 0 0 20px;
+.NavBar {   
+  justify-content: space-evenly;
+  height: 10px;
+  padding: 25px;
+  margin: 0px 0;
+  color: grey;
+  background-color:  #F0EAD6; 
+  font-size: 20px;
+  text-align: center;
   }
   
   .NavBar-link {
@@ -10,4 +15,15 @@
   
   .NavBar-welcome {
     color: grey;
+    text-align: right; 
+  }
+
+  .notions-nav{
+    justify-content: left; 
+
+  }
+
+  .test {
+    background-color: black; 
+    width: 500px; 
   }

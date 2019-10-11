@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import NotionForm from '../../components/Notion/NotionForm'
+import './HomePage'
 
 const HomePage = (props) => {
     let homepage = props.user ?
