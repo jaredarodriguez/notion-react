@@ -2,6 +2,10 @@
 
 #### 'Your Daily Music Discovery and Journal Platform' 
 
+#####Introduction 
+----
+Each morning randomly generate a song using your spotify account and jot down your first thoughts of the day. Archive them on your journal for keepsake and learn to identify how music can affect your mood. 
+
 ##### User Stories
 ___
 1. AAU I want to have my own private login 
