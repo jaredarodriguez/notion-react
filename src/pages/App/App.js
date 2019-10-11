@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import HomePage from '../HomePage/HomePage'
 import SignupPage from '../SignupPage/SignupPage'
 import userService from '../../utils/userService';
 import LoginPage from '../LoginPage/LoginPage';
-import NotionForm from '../../components/Notion/NotionForm';
 import NotionsPage from '../NotionsPage/NotionsPage';
 import EditPage from '../EditPage/EditPage';
 
 class App extends Component {
   state = {
-    apiResponse: null,
     user: null
   }
 
@@ -29,9 +27,6 @@ class App extends Component {
 
 
   /* ---- Lifecycle Methods ----*/
-  // componentDidMount = () => {
-
-  // }
 
   render() {
     return (
@@ -59,7 +54,7 @@ class App extends Component {
             />
           } />
           <Route exact path='/notions' render={() =>
-            <NotionsPage user={this.state.user} handleLogout={this.handleLogout} notionData={this.state.apiResponse} />
+            <NotionsPage user={this.state.user} handleLogout={this.handleLogout} />
           } />
           <Route exact path='/edit' render={({ location }) =>
             <EditPage location={location} user={this.state.user} handleLogout={this.handleLogout} />} />

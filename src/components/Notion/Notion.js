@@ -15,11 +15,11 @@ class Notion extends Component {
         const { title, notion, goals, songName, moodRating, id } = this.props
         return (
             <div className="notionCard">
-                <h1>{this.props.title}</h1>
-                <p>{this.props.notion}</p>
-                <p>{this.props.goals}</p>
-                <p>{this.props.songName}</p>
-                <p>{this.props.moodRating}</p>
+                <h1>{title}</h1>
+                <p>{notion}</p>
+                <p>{goals}</p>
+                <p>{songName}</p>
+                <p>{moodRating}</p>
                 <button onClick={this.handleClick}>X</button>
                 <Link to={{
                     pathname: '/edit',
