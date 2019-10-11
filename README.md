@@ -1,8 +1,8 @@
 # Notion 
 
-#### 'Your Daily Music Discovery and Journal Platform' 
+####     'Your Daily Music Discovery and Journal Platform' 
 
-#####Introduction 
+##### Introduction 
 ----
 Each morning randomly generate a song using your spotify account and jot down your first thoughts of the day. Archive them on your journal for keepsake and learn to identify how music can affect your mood. 
 
